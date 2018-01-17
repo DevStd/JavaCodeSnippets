@@ -1,5 +1,8 @@
 package exercise.string;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Parse {
 
 	public static void main(String[] args) {
@@ -19,6 +22,9 @@ public class Parse {
 		
 		// 5. 문자열의 특정위치부터 일정 갯수만큼 문자열을 잘라내기
 		sp.substringWithLength();
+		
+		// 6. 정규식을 이용한 문자열 파싱
+		sp.parseUsingRegEx();
 	}
 
 	/** 1. 공백으로 구분된 문자열을 split로 나누기 */
@@ -82,9 +88,36 @@ public class Parse {
 		
 		System.out.println("origin : " + input);
 		System.out.println("substring(0, 2) : " + input.substring(0,2));
-		System.out.println("substring(2,4) : " + input.substring(2,4));
+		System.out.println("substring(2, 4) : " + input.substring(2,4));
 		System.out.println("substring(1, indexOf('g')) : " + input.substring(1,input.indexOf("g")));
 		System.out.println("substring(1, lastIndexOf('g')) : " + input.substring(1,input.lastIndexOf("g")));
+		
+		System.out.println("-----------------");
+	}
+	
+	/** 6. 정규식을 이용한 문자열 파싱 */
+	public void parseUsingRegEx() {
+		System.out.println("==<< parseUsingRegEx >>==");
+		
+		String[] input = new String[] {
+				"2018.01.17 13:05:52 RECV some data to recieve RES_OK",
+				"2018.01.17 13:06:12 SEND some data to send data is long long long very long and contains $peci@L charactors RES_OK",
+				"20180318 060552 RECV error to process RES_ERR",
+				"2018.03.18 06:05:52 RECV error to process RES_ERR",
+		};
+		
+		Pattern p = Pattern.compile("^(\\d{4}\\.\\d{2}\\.\\d{2})\\s(\\d{2}:\\d{2}:\\d{2})\\s(\\w{4}).*(RES_(OK|ERR))$");
+				
+		for(String s : input) {
+			Matcher m = p.matcher(s);
+			
+			System.out.println("origin : " + s);
+			if(m.matches()) {				
+				System.out.println("DATE: "+ m.group(1) + " / TYPE : "+ m.group(3) + " / RESULT : "+ m.group(4)+"\n");
+			} else {
+				System.out.println("Cannot parse data\n");
+			}
+		}
 		
 		System.out.println("-----------------");
 	}
