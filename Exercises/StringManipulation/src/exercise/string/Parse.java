@@ -8,26 +8,26 @@ public class Parse {
 	public static void main(String[] args) {
 		Parse sp = new Parse();
 		
-		// 1. °ø¹éÀ¸·Î ±¸ºĞµÈ ¹®ÀÚ¿­À» split·Î ³ª´©±â
+		// 1. ê³µë°±ìœ¼ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´ì„ splitë¡œ ë‚˜ëˆ„ê¸°
 		sp.splitBySpace();
 		
-		// 2. ¹®ÀÚ¿­ÀÇ ¾Õ/µÚ·Î °ø¹éÀÌ ÀÖ´Â ¹®ÀÚ¿­À» split·Î ³ª´©±â
+		// 2. ë¬¸ìì—´ì˜ ì•/ë’¤ë¡œ ê³µë°±ì´ ìˆëŠ” ë¬¸ìì—´ì„ splitë¡œ ë‚˜ëˆ„ê¸°
 		sp.splitBySpaceWithMargins();
 		
-		// 3. Space¿Í TabÀÌ ¼¯ÀÎ ¹®ÀÚ¿­À» Á¤±Ô½ÄÀ¸·Î ³ª´©±â
+		// 3. Spaceì™€ Tabì´ ì„ì¸ ë¬¸ìì—´ì„ ì •ê·œì‹ìœ¼ë¡œ ë‚˜ëˆ„ê¸°
 		sp.splitByMixedSpaceAndTabs();
 		
-		// 4. ¹®ÀÚ¿­ÀÇ Æ¯Á¤À§Ä¡ ÀÌÈÄÀÇ ¹®ÀÚ¿­À» Àß¶ó³»±â
+		// 4. ë¬¸ìì—´ì˜ íŠ¹ì •ìœ„ì¹˜ ì´í›„ì˜ ë¬¸ìì—´ì„ ì˜ë¼ë‚´ê¸°
 		sp.substring();
 		
-		// 5. ¹®ÀÚ¿­ÀÇ Æ¯Á¤À§Ä¡ºÎÅÍ ÀÏÁ¤ °¹¼ö¸¸Å­ ¹®ÀÚ¿­À» Àß¶ó³»±â
+		// 5. ë¬¸ìì—´ì˜ íŠ¹ì •ìœ„ì¹˜ë¶€í„° ì¼ì • ê°¯ìˆ˜ë§Œí¼ ë¬¸ìì—´ì„ ì˜ë¼ë‚´ê¸°
 		sp.substringWithLength();
 		
-		// 6. Á¤±Ô½ÄÀ» ÀÌ¿ëÇÑ ¹®ÀÚ¿­ ÆÄ½Ì
+		// 6. ì •ê·œì‹ì„ ì´ìš©í•œ ë¬¸ìì—´ íŒŒì‹±
 		sp.parseUsingRegEx();
 	}
 
-	/** 1. °ø¹éÀ¸·Î ±¸ºĞµÈ ¹®ÀÚ¿­À» split·Î ³ª´©±â */
+	/** 1. ê³µë°±ìœ¼ë¡œ êµ¬ë¶„ëœ ë¬¸ìì—´ì„ splitë¡œ ë‚˜ëˆ„ê¸° */
 	public void splitBySpace() {
 		System.out.println("==<< splitBySpace >>==");
 		
@@ -40,7 +40,7 @@ public class Parse {
 		System.out.println("\n-----------------");
 	}
 	
-	/** 2. ¹®ÀÚ¿­ÀÇ ¾Õ/µÚ·Î °ø¹éÀÌ ÀÖ´Â ¹®ÀÚ¿­À» split·Î ³ª´©±â */
+	/** 2. ë¬¸ìì—´ì˜ ì•/ë’¤ë¡œ ê³µë°±ì´ ìˆëŠ” ë¬¸ìì—´ì„ splitë¡œ ë‚˜ëˆ„ê¸° */
 	public void splitBySpaceWithMargins() {
 		System.out.println("==<< splitBySpaceWithMargins >>==");
 		
@@ -53,7 +53,7 @@ public class Parse {
 		System.out.println("\n-----------------");
 	}
 	
-	/** 3. Space¿Í TabÀÌ ¼¯ÀÎ ¹®ÀÚ¿­À» Á¤±Ô½ÄÀ¸·Î ³ª´©±â */
+	/** 3. Spaceì™€ Tabì´ ì„ì¸ ë¬¸ìì—´ì„ ì •ê·œì‹ìœ¼ë¡œ ë‚˜ëˆ„ê¸° */
 	public void splitByMixedSpaceAndTabs() {
 		System.out.println("==<< splitByMixedSpaceAndTabs >>==");
 		
@@ -66,7 +66,7 @@ public class Parse {
 		System.out.println("\n-----------------");
 	}
 	
-	/** 4. ¹®ÀÚ¿­ÀÇ Æ¯Á¤À§Ä¡ ÀÌÈÄÀÇ ¹®ÀÚ¿­À» Àß¶ó³»±â */
+	/** 4. ë¬¸ìì—´ì˜ íŠ¹ì •ìœ„ì¹˜ ì´í›„ì˜ ë¬¸ìì—´ì„ ì˜ë¼ë‚´ê¸° */
 	public void substring() {
 		System.out.println("==<< substring >>==");
 		
@@ -80,7 +80,7 @@ public class Parse {
 		System.out.println("-----------------");
 	}
 	
-	/** 5. ¹®ÀÚ¿­ÀÇ Æ¯Á¤À§Ä¡ºÎÅÍ ÀÏÁ¤ °¹¼ö¸¸Å­ ¹®ÀÚ¿­À» Àß¶ó³»±â */
+	/** 5. ë¬¸ìì—´ì˜ íŠ¹ì •ìœ„ì¹˜ë¶€í„° ì¼ì • ê°¯ìˆ˜ë§Œí¼ ë¬¸ìì—´ì„ ì˜ë¼ë‚´ê¸° */
 	public void substringWithLength() {
 		System.out.println("==<< substringWithLength >>==");
 		
@@ -95,7 +95,7 @@ public class Parse {
 		System.out.println("-----------------");
 	}
 	
-	/** 6. Á¤±Ô½ÄÀ» ÀÌ¿ëÇÑ ¹®ÀÚ¿­ ÆÄ½Ì */
+	/** 6. ì •ê·œì‹ì„ ì´ìš©í•œ ë¬¸ìì—´ íŒŒì‹± */
 	public void parseUsingRegEx() {
 		System.out.println("==<< parseUsingRegEx >>==");
 		
