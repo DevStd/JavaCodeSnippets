@@ -3,8 +3,8 @@
 주제별 구현 방법 및 실행가능한 샘플 코드 정리
 
 ### 1. 문자열 처리
-* 문자열 파싱 (split, substring) - Example, [\[Code\]](src/exercise/string/Parse.java)
-* 날짜/시간 계산 및 출력 - Example, [\[Code\]](src/exercise/string/DateString.java)
+* 문자열 파싱 (split, substring) - Example, [\[Code\]](StringManipulation/src/exercise/string/Parse.java)
+* 날짜/시간 계산 및 출력 - Example, [\[Code\]](StringManipulation/src/exercise/string/DateString.java)
 * 숫자 처리, 숫자 출력
 * 정규식 (유효성체크, 검색)
 
