@@ -2,7 +2,6 @@ package fm.no3;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.security.DigestInputStream;
@@ -47,17 +46,15 @@ public class FileManager {
 		try {
 			// MD5입력 스트림 열기
 			MessageDigest md = MessageDigest.getInstance("MD5");
-			DigestInputStream dis = new DigestInputStream(new FileInputStream(f), md);
 			
 			// 파일 끝까지 Checksum 계산
-			while(dis.read() != -1) ;		       
-	        hash = md.digest();
-	        dis.close();
+			try(DigestInputStream dis = new DigestInputStream(new FileInputStream(f), md)){				
+				while(dis.read() != -1) ;		       
+		        hash = md.digest();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 

@@ -22,23 +22,18 @@ public class FileVersion {
 	
 	public FileVersion load(String path)  {
 		FileVersion fv = null;
-		try {
-			File versionFile = new File(path+"/version.txt");
-			BufferedReader br = new BufferedReader(new FileReader(versionFile));
-						
+		try (BufferedReader br = new BufferedReader(new FileReader(new File(path+"/version.txt")))){			
 			HashMap<String, VersionInfo> versionData = new HashMap<>();
 			String line = null;
 			while((line=br.readLine())!=null) {
 				String[] items = line.split(":");
 			}			
-			br.close();
-			
 			fv = new FileVersion(versionData);
-		} catch (FileNotFoundException fe) {
-			fe.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		} 
 		return fv;
 	}
 }
