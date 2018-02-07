@@ -1,5 +1,7 @@
 package fm.no4;
 
+import java.io.File;
+
 /**
  * ### 4. 폴더 병합
  * - 프로젝트의 하위에 MERGED 폴더를 생성한다.
@@ -9,8 +11,15 @@ package fm.no4;
 public class No4Runner {
 
 	public static void main(String[] args) {
-		// TODO 4번 요구사항 작성
-
+		FileManager fm = new FileManager();
+		
+		// 1. MERGED폴더 생성
+		File merged = new File("./MERGED");
+		fm.delete(merged);
+		merged.mkdir();
+		
+		// 2. 폴더 병합
+		FileVersion.merge("./MERGED", "./INPUT1", "./INPUT2");
 	}
 
 }
