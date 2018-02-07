@@ -12,8 +12,16 @@ package fm.no3;
 public class No3Runner {
 
 	public static void main(String[] args) {
-		// TODO 3번 요구사항 작성
+		String path = "./INPUT1";
 
+		// 1. version.txt 읽기 
+		FileVersion fv = FileVersion.load(path);
+		
+		// 2. 버전정보 갱신
+		fv.refresh();
+		
+		// 3. version.txt 업데이트
+		fv.update();
 	}
 
 }
