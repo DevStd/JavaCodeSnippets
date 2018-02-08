@@ -66,10 +66,12 @@ public class FileVersion {
 				continue;
 			}
 			
-			// 파일상태 > 변경
-			if(!vi.md5.equals(fm.md5(f))) {
+			/// 파일상태 > 변경
+			String md5 = fm.md5(f);
+			if(!vi.md5.equals(md5)) {
 				vi.version++;
 				vi.status = "M";
+				vi.md5=md5;
 				continue;
 			}
 		}

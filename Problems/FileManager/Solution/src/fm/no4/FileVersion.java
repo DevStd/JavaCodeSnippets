@@ -3,9 +3,7 @@ package fm.no4;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -69,9 +67,11 @@ public class FileVersion {
 			}
 			
 			// 파일상태 > 변경
-			if(!vi.md5.equals(fm.md5(f))) {
+			String md5 = fm.md5(f);
+			if(!vi.md5.equals(md5)) {
 				vi.version++;
 				vi.status = "M";
+				vi.md5=md5;
 				continue;
 			}
 		}
@@ -137,7 +137,7 @@ public class FileVersion {
 						merged = mergedVersion.verInfoList.get(file);
 						if(current.version > merged.version) {
 							mergedVersion.verInfoList.put(file, current);
-							if("D".equals(current.status)) fileOriginPath.remove("file");
+							if("D".equals(current.status)) fileOriginPath.remove(file);
 							else fileOriginPath.put("file", inp+"/"+file);
 						}
 					}
