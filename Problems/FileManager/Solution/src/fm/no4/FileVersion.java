@@ -138,7 +138,7 @@ public class FileVersion {
 						if(current.version > merged.version) {
 							mergedVersion.verInfoList.put(file, current);
 							if("D".equals(current.status)) fileOriginPath.remove(file);
-							else fileOriginPath.put("file", inp+"/"+file);
+							else fileOriginPath.put(file, inp+"/"+file);
 						}
 					}
 					// 단순추가
