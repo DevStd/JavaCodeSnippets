@@ -3,8 +3,8 @@
 주제별 구현 방법 및 실행가능한 샘플 코드 정리
 
 ### 1. 문자열 처리
-* 문자열 파싱 (split, substring) - Example, [\[Code\]](StringManipulation/src/exercise/string/Parse.java)
-* 날짜/시간 계산 및 출력 - Example, [\[Code\]](StringManipulation/src/exercise/string/DateString.java)
+* 문자열 파싱 (split, substring) - [\[Example\]](StringManipulation/src/exercise/string/Parse.java)
+* 날짜/시간 계산 및 출력 - [\[Example\]](StringManipulation/src/exercise/string/DateString.java)
 * 숫자 처리, 숫자 출력
 * 정규식 (유효성체크, 검색)
 
@@ -26,7 +26,7 @@
 * Thread Pool
 
 ### 4. 소켓 통신
-* Text 발신 수신
+* Text 발신 수신 - [\[EchoClient\]](SocketEchoServer/src/client/SocketClient.java), [\[EchoServer\]](SocketEchoServer/src/server/simple/SimpleServer.java),  [\[EchoServer with Thread\]](SocketEchoServer/src/server/advanced/EchoServer.java)
 * 파일 송수신
 * 다중접속 허용
 * 비동기 소켓 통신
